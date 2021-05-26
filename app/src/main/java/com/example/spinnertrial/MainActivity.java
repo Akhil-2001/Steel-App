@@ -15,7 +15,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        Spinner spin = (Spinner) findViewById(R.id.spinner);
+        Spinner spin = (Spinner) findViewById(R.id.dropdown);
         spin.setOnItemSelectedListener(this);
 
         //Creating the ArrayAdapter instance having the country list
