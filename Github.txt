@@ -1,7 +1,0 @@
-Adding files or updating a repo in github: 
-
-git init
-git add .
-git commit -m "Commit message"
-git remote add origin https://github.com/yourusername/your-repo-name.git
-git push -u origin master
