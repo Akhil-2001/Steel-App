@@ -44,6 +44,53 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 
         spin.setAdapter(aa);
 
+        TextWatcher textwatcher = new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+
+                total=0;
+                int i[] = new int[5];
+                if (!b1.getText().toString().equals("")) {
+                    i[0] = Integer.parseInt(b1.getText().toString());
+                    total = total + i[0];
+                }
+                if (!b2.getText().toString().equals("")) {
+                    i[1] = Integer.parseInt(b2.getText().toString());
+                    total = total + i[1];
+                }
+                if (!b3.getText().toString().equals("")) {
+                    i[2] = Integer.parseInt(b3.getText().toString());
+                    total = total + i[2];
+                }
+                if (!b4.getText().toString().equals("")) {
+                    i[3] = Integer.parseInt(b4.getText().toString());
+                    total = total + i[3];
+                }
+                if (!b5.getText().toString().equals("")) {
+                    i[4] = Integer.parseInt(b5.getText().toString());
+                    total = total + i[4];
+                }
+
+                t2.setText(String.valueOf(total));
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+
+            }
+        };
+        b1.addTextChangedListener(textwatcher);
+        b2.addTextChangedListener(textwatcher);
+        b3.addTextChangedListener(textwatcher);
+        b4.addTextChangedListener(textwatcher);
+        b5.addTextChangedListener(textwatcher);
+
     }
 
     //Performing action onItemSelected and onNothing selected
@@ -69,31 +116,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
             h2.setText("Kgs");
             h3.setText("Rods");
         }
-        b1.addTextChangedListener(new TextWatcher() {
-            @Override
-            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
 
-            }
-
-            @Override
-            public void onTextChanged(CharSequence s, int start, int before, int count) {
-
-
-            }
-
-            @Override
-            public void afterTextChanged(Editable s) {
-                if(b1!=null && !b1.getText().toString().isEmpty()) {
-                    total = total+ Integer.parseInt(b1.getText().toString());
-                    t2.setText(total + "");
-                }
-                else
-                {
-                    b1.getText().clear();
-                    t2.setText(total-Integer.parseInt(b1.getText().toString()));
-                }
-            }
-        });
 
     }
     @Override
