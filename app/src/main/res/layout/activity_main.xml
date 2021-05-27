@@ -19,17 +19,17 @@
 
     <TextView
         android:id="@+id/t1"
-        android:layout_width="80dp"
+        android:layout_width="70dp"
         android:layout_height="30dp"
         android:layout_marginStart="25dp"
         android:layout_marginTop="540dp"
-        android:background="@color/white"
+
         android:ems="10"
         android:fontFamily="sans-serif-black"
         android:gravity="center"
         android:text="Total"
         android:textAlignment="center"
-        android:textColor="#000000"
+        android:textColor="#FFFFFF"
         android:textSize="24sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
@@ -69,19 +69,19 @@
 
     <TextView
         android:id="@+id/a5"
-        android:layout_width="80dp"
+        android:layout_width="70dp"
         android:layout_height="30dp"
         android:layout_marginStart="25dp"
         android:layout_marginTop="445dp"
-        android:background="@color/white"
+
         android:ems="10"
+        android:fontFamily="monospace"
         android:gravity="center"
         android:inputType="textPersonName"
         android:text="20mm"
         android:textAlignment="center"
-        android:textColor="#000000"
+        android:textColor="#ffffff"
         android:textSize="20sp"
-        android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -133,19 +133,19 @@
 
     <TextView
         android:id="@+id/a4"
-        android:layout_width="80dp"
+        android:layout_width="70dp"
         android:layout_height="30dp"
         android:layout_marginStart="25dp"
         android:layout_marginTop="375dp"
-        android:background="@color/white"
+
         android:ems="10"
+        android:fontFamily="monospace"
         android:gravity="center"
         android:inputType="textPersonName"
         android:text="16mm"
         android:textAlignment="center"
-        android:textColor="#000000"
+        android:textColor="#ffffff"
         android:textSize="20sp"
-        android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -212,19 +212,19 @@
 
     <TextView
         android:id="@+id/a3"
-        android:layout_width="80dp"
+        android:layout_width="70dp"
         android:layout_height="30dp"
         android:layout_marginStart="25dp"
         android:layout_marginTop="305dp"
-        android:background="@color/white"
+
         android:ems="10"
+        android:fontFamily="monospace"
         android:gravity="center"
         android:inputType="textPersonName"
         android:text="12mm"
         android:textAlignment="center"
-        android:textColor="#000000"
+        android:textColor="#ffffff"
         android:textSize="20sp"
-        android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -276,20 +276,19 @@
 
     <TextView
         android:id="@+id/a2"
-        android:layout_width="80dp"
+        android:layout_width="70dp"
         android:layout_height="30dp"
         android:layout_marginStart="25dp"
         android:layout_marginTop="235dp"
-        android:background="@color/white"
+
         android:ems="10"
-        android:fontFamily="sans-serif-black"
+        android:fontFamily="monospace"
         android:gravity="center"
         android:inputType="textPersonName"
         android:text="10mm"
         android:textAlignment="center"
-        android:textColor="#000000"
+        android:textColor="#ffffff"
         android:textSize="20sp"
-        android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -342,20 +341,19 @@
 
     <TextView
         android:id="@+id/a1"
-        android:layout_width="80dp"
+        android:layout_width="70dp"
         android:layout_height="30dp"
         android:layout_marginStart="25dp"
         android:layout_marginTop="165dp"
-        android:background="@color/white"
+
         android:ems="10"
-        android:fontFamily="sans-serif-black"
+        android:fontFamily="monospace"
         android:gravity="center"
         android:inputType="textPersonName"
         android:text="8mm"
         android:textAlignment="center"
-        android:textColor="#000000"
+        android:textColor="#ffffff"
         android:textSize="20sp"
-        android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -407,49 +405,57 @@
 
     <TextView
         android:id="@+id/h1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="25dp"
-        android:layout_marginTop="125dp"
+        android:layout_width="80dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="110dp"
+        android:gravity="center"
         android:text="TextView"
         android:textColor="#FFFFFF"
-        android:textSize="16sp"
+        android:textSize="20sp"
+        android:textStyle="bold"
         app:layout_constraintStart_toEndOf="@+id/dia"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/dia"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="30dp"
-        android:layout_marginTop="125dp"
+        android:layout_width="83dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="110dp"
+        android:gravity="center"
         android:text="Diameter"
         android:textColor="#FFFFFF"
-        android:textSize="16sp"
+        android:textSize="20sp"
+        android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/h2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="25dp"
-        android:layout_marginTop="125dp"
+        android:layout_width="80dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="110dp"
+        android:gravity="center"
         android:text="TextView"
         android:textColor="#FFFFFF"
-        android:textSize="16sp"
+        android:textSize="20sp"
+        android:textStyle="bold"
         app:layout_constraintStart_toEndOf="@+id/h1"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/h3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="25dp"
-        android:layout_marginTop="125dp"
+        android:layout_width="80dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="110dp"
+        android:gravity="center"
         android:text="TextView"
         android:textColor="#FFFFFF"
-        android:textSize="16sp"
+        android:textSize="20sp"
+        android:textStyle="bold"
         app:layout_constraintStart_toEndOf="@+id/h2"
         app:layout_constraintTop_toTopOf="parent" />
 
