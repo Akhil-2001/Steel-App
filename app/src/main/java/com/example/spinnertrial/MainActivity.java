@@ -19,10 +19,13 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
     Spinner spin ;
     EditText b1,b2,b3,b4,b5;
     int total=0;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
         spin= (Spinner) findViewById(R.id.dropdown);
         h1=(TextView)findViewById((R.id.h1));
         h2=(TextView)findViewById((R.id.h2));
@@ -32,10 +35,9 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         t4=(TextView)findViewById((R.id.t4));
         spin.setOnItemSelectedListener(this);
 
-        //Creating the ArrayAdapter instance having the country list
         ArrayAdapter aa = new ArrayAdapter(this,android.R.layout.simple_spinner_item,units);
         aa.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        //Setting the ArrayAdapter data on the Spinner
+
         b1=(EditText)findViewById((R.id.b1));
         b2=(EditText)findViewById((R.id.b2));
         b3=(EditText)findViewById((R.id.b3));
@@ -55,6 +57,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 
                 total=0;
                 int i[] = new int[5];
+
                 if (!b1.getText().toString().equals("")) {
                     i[0] = Integer.parseInt(b1.getText().toString());
                     total = total + i[0];
@@ -93,10 +96,15 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 
     }
 
-    //Performing action onItemSelected and onNothing selected
     @Override
     public void onItemSelected(AdapterView<?> arg0, View arg1, int position, long id) {
         Toast.makeText(getApplicationContext(),units[position] , Toast.LENGTH_LONG).show();
+        b1.setText("");
+        b2.setText("");
+        b3.setText("");
+        b4.setText("");
+        b5.setText("");
+        t2.setText("0");
         choice = spin.getSelectedItem().toString();
         if(choice.equals("Kgs"))
         {
@@ -119,6 +127,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 
 
     }
+
     @Override
     public void onNothingSelected(AdapterView<?> arg0) {
         // TODO Auto-generated method stub
