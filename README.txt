@@ -9,6 +9,14 @@ git config --global user.name "John Doe"
 git config --global user.email johndoe@example.com
 Note:select login using browser
 
+
+*Cloning a repo :
+git clone https://github.com/yourusername/your-repo-name.git
+Perform any changes......
+git commit -m "Commit message"
+git push -u origin [Branch_Name] 
+
+
 *Create,  move to and push the new branch to the hub :
 
 git checkout -b [name_of_your_new_branch]
