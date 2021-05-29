@@ -208,6 +208,64 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 
     }
 
+    void totalcalc(){
+
+        int b[] = new int[5];
+        int c[] = new int[5];
+        int d[] = new int[5];
+
+        for (int j = 0; j < 3; j++) {
+            total[j] = 0;
+        }
+
+        if (!b1.getText().toString().equals("")) {
+            b[0] = Integer.parseInt(b1.getText().toString());
+            c[0] = Integer.parseInt(c1.getText().toString());
+            d[0] = Integer.parseInt(d1.getText().toString());
+            total[0] = total[0] + b[0];
+            total[1] = total[1] + c[0];
+            total[2] = total[2] + d[0];
+        }
+        if (!b2.getText().toString().equals("")) {
+            b[1] = Integer.parseInt(b2.getText().toString());
+            c[1] = Integer.parseInt(c2.getText().toString());
+            d[1] = Integer.parseInt(d2.getText().toString());
+
+            total[0] = total[0] + b[1];
+            total[1] = total[1] + c[1];
+            total[2] = total[2] + d[1];
+        }
+        if (!b3.getText().toString().equals("")) {
+            b[2] = Integer.parseInt(b3.getText().toString());
+            c[2] = Integer.parseInt(c3.getText().toString());
+            d[2] = Integer.parseInt(d3.getText().toString());
+            total[0] = total[0] + b[2];
+            total[1] = total[1] + c[2];
+            total[2] = total[2] + d[2];
+        }
+        if (!b4.getText().toString().equals("")) {
+            b[3] = Integer.parseInt(b4.getText().toString());
+            c[3] = Integer.parseInt(c4.getText().toString());
+            d[3] = Integer.parseInt(d4.getText().toString());
+            total[0] = total[0] + b[3];
+            total[1] = total[1] + c[3];
+            total[2] = total[2] + d[3];
+        }
+        if (!b5.getText().toString().equals("")) {
+            b[4] = Integer.parseInt(b5.getText().toString());
+            c[4] = Integer.parseInt(c5.getText().toString());
+            d[4] = Integer.parseInt(d5.getText().toString());
+            total[0] = total[0] + b[4];
+            total[1] = total[1] + c[4];
+            total[2] = total[2] + d[4];
+        }
+
+        t2.setText(String.valueOf(total[0]));
+        t3.setText(String.valueOf(total[1]));
+        t4.setText(String.valueOf(total[2]));
+
+    }
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -255,59 +313,21 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
 
-                int b[] = new int[5];
-                int c[] = new int[5];
-                int d[] = new int[5];
+                if(choice.equals("Kgs")){
+                    kgs();
 
-                for (int j = 0; j < 3; j++) {
-                    total[j] = 0;
                 }
 
-                if (!b1.getText().toString().equals("")) {
-                    b[0] = Integer.parseInt(b1.getText().toString());
-                    c[0] = Integer.parseInt(c1.getText().toString());
-                    d[0] = Integer.parseInt(d1.getText().toString());
-                    total[0] = total[0] + b[0];
-                    total[1] = total[1] + c[0];
-                    total[2] = total[2] + d[0];
-                }
-                if (!b2.getText().toString().equals("")) {
-                    b[1] = Integer.parseInt(b2.getText().toString());
-                    c[1] = Integer.parseInt(c2.getText().toString());
-                    d[1] = Integer.parseInt(d2.getText().toString());
+                if(choice.equals("Bundles")){
+                    bundles();
 
-                    total[0] = total[0] + b[1];
-                    total[1] = total[1] + c[1];
-                    total[2] = total[2] + d[1];
-                }
-                if (!b3.getText().toString().equals("")) {
-                    b[2] = Integer.parseInt(b3.getText().toString());
-                    c[2] = Integer.parseInt(c3.getText().toString());
-                    d[2] = Integer.parseInt(d3.getText().toString());
-                    total[0] = total[0] + b[2];
-                    total[1] = total[1] + c[2];
-                    total[2] = total[2] + d[2];
-                }
-                if (!b4.getText().toString().equals("")) {
-                    b[3] = Integer.parseInt(b4.getText().toString());
-                    c[3] = Integer.parseInt(c4.getText().toString());
-                    d[3] = Integer.parseInt(d4.getText().toString());
-                    total[0] = total[0] + b[3];
-                    total[1] = total[1] + c[3];
-                    total[2] = total[2] + d[3];
-                }
-                if (!b5.getText().toString().equals("")) {
-                    b[4] = Integer.parseInt(b5.getText().toString());
-                    c[4] = Integer.parseInt(c5.getText().toString());
-                    d[4] = Integer.parseInt(d5.getText().toString());
-                    total[0] = total[0] + b[4];
-                    total[1] = total[1] + c[4];
-                    total[2] = total[2] + d[4];
                 }
 
-                t2.setText(String.valueOf(total[0]));
-                t3.setText(String.valueOf(total[1]));
-                t4.setText(String.valueOf(total[2]));
+                if(choice.equals("Rods")){
+                    rods();
+
+                }
+                totalcalc();
 
             }
 
