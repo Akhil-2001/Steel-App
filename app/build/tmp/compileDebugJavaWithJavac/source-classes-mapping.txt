@@ -1,0 +1,6 @@
+com/example/spinnertrial/MainActivity.java
+ com.example.spinnertrial.MainActivity
+ com.example.spinnertrial.MainActivity$1
+ com.example.spinnertrial.MainActivity$2
+com/example/spinnertrial/BuildConfig.java
+ com.example.spinnertrial.BuildConfig
