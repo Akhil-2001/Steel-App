@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.widget.AdapterView;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -19,6 +20,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
     TextView h1, h2, h3, t2, t3, t4, c1, c2, c3, c4, c5,d1,d2,d3,d4,d5;
     Spinner spin;
     EditText b1, b2, b3, b4, b5;
+    Button reset;
     int total[] = new int[3];
 
     int count=0;
@@ -296,13 +298,14 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         d4 = (TextView) findViewById((R.id.d4));
         d5 = (TextView) findViewById((R.id.d5));
 
+        reset = (Button) findViewById(R.id.reset);
+
         spin.setOnItemSelectedListener(this);
         //Creating the ArrayAdapter instance having the country list
         ArrayAdapter aa = new ArrayAdapter(this, android.R.layout.simple_spinner_item, units);
         aa.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         //Setting the ArrayAdapter data on the Spinner
         spin.setAdapter(aa);
-
 
         TextWatcher textwatcher = new TextWatcher() {
             @Override
@@ -342,6 +345,21 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         b4.addTextChangedListener(textwatcher);
         b5.addTextChangedListener(textwatcher);
 
+        reset.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(getApplicationContext(), "Reset", Toast.LENGTH_LONG).show();
+                b1.setText("");
+                b2.setText("");
+                b3.setText("");
+                b4.setText("");
+                b5.setText("");
+                t2.setText("");
+                t3.setText("");
+                t4.setText("");
+            }
+        });
+
     }
 
     //Performing action onItemSelected and onNothing selected
@@ -355,7 +373,10 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         b3.setText("");
         b4.setText("");
         b5.setText("");
-        t2.setText("0");
+        t2.setText("");
+        t3.setText("");
+        t4.setText("");
+
         if (choice.equals("Kgs")) {
             h1.setText(choice);
             h2.setText("Bundles");
