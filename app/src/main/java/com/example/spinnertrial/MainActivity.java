@@ -1,7 +1,11 @@
 package com.example.spinnertrial;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.app.AppCompatDelegate;
+import androidx.core.content.FileProvider;
 
+import android.content.Context;
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
@@ -13,6 +17,9 @@ import android.widget.Toast;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Spinner;
+
+import java.io.File;
+import java.io.FileOutputStream;
 
 
 public class MainActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
@@ -406,6 +413,42 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         t4.setText(String.valueOf(total[2]));
 
     }
+
+    public void export(View view){
+        //generate data
+        StringBuilder data = new StringBuilder();
+        data.append("Dia,"+h1.getText().toString()+","+h2.getText().toString()+","+h3.getText().toString());
+        data.append("\n8mm,"+b1.getText().toString()+","+c1.getText().toString()+","+d1.getText().toString());
+        data.append("\n10mm,"+b2.getText().toString()+","+c2.getText().toString()+","+d2.getText().toString());
+        data.append("\n12mm,"+b3.getText().toString()+","+c3.getText().toString()+","+d3.getText().toString());
+        data.append("\n16mm,"+b4.getText().toString()+","+c4.getText().toString()+","+d4.getText().toString());
+        data.append("\n20mm,"+b5.getText().toString()+","+c5.getText().toString()+","+d5.getText().toString());
+        data.append("\nTotal,"+t2.getText().toString()+","+t3.getText().toString()+","+t4.getText().toString());
+
+        try{
+            //saving the file into device
+            FileOutputStream out = openFileOutput("steel.csv", Context.MODE_PRIVATE);
+            out.write((data.toString()).getBytes());
+            out.close();
+
+            //exporting
+            Context context = getApplicationContext();
+            File filelocation = new File(getFilesDir(), "steel.csv");
+            Uri path = FileProvider.getUriForFile(context, "com.example.spinnertrial.fileprovider", filelocation);
+            Intent fileIntent = new Intent(Intent.ACTION_SEND);
+            fileIntent.setType("text/csv");
+            fileIntent.putExtra(Intent.EXTRA_SUBJECT, "Steel Result");
+            fileIntent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
+            fileIntent.putExtra(Intent.EXTRA_STREAM, path);
+            startActivity(Intent.createChooser(fileIntent, "Share Result"));
+        }
+        catch(Exception e){
+            e.printStackTrace();
+        }
+
+
+    }
+
 }
 
 
