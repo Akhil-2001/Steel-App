@@ -1,7 +1,7 @@
 package Dictionary;
 
 
-public interface _inline_
+public interface calc_interface
 {
     int calc(double x);
 }

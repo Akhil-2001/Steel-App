@@ -1,6 +1,5 @@
 package com.example.spinnertrial;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.app.AppCompatDelegate;
 import androidx.core.content.FileProvider;
 
 import android.content.Context;
@@ -21,7 +20,7 @@ import android.widget.Spinner;
 import java.io.File;
 import java.io.FileOutputStream;
 
-import Dictionary._inline_;
+import Dictionary.calc_interface;
 import Dictionary.dictionary;
 
 
@@ -220,7 +219,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         for(int j=0;j<5;j++)
         {
             if (!b[j].getText().toString().equals("")) {
-                _inline_[] x= (_inline_[]) obj.function_values.get(keys[0][j]);
+                calc_interface[] x= (calc_interface[]) obj.function_values.get(keys[0][j]);
                 for(int k=0;k<2;k++) {
                     n[k] = x[k].calc(Double.parseDouble(b[j].getText().toString()));
                 }
@@ -241,7 +240,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 
         for(int j=0;j<5;j++) {
             if (!b[j].getText().toString().equals("")) {
-                _inline_[] x= (_inline_[]) obj.function_values.get(keys[1][j]);
+                calc_interface[] x= (calc_interface[]) obj.function_values.get(keys[1][j]);
                 for(int k=0;k<2;k++) {
                     n[k] = x[k].calc(Double.parseDouble(b[j].getText().toString()));
                 }
@@ -262,7 +261,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 
         for(int j=0;j<5;j++) {
             if (!b[j].getText().toString().equals("")) {
-                _inline_[] x= (_inline_[]) obj.function_values.get(keys[2][j]);
+                calc_interface[] x= (calc_interface[]) obj.function_values.get(keys[2][j]);
                 for(int k=0;k<2;k++) {
                     n[k] = x[k].calc(Double.parseDouble(b[j].getText().toString()));
                 }
