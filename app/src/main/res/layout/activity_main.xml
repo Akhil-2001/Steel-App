@@ -1,7 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintHorizontal_bias="0.0"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent"
+    app:layout_constraintVertical_bias="0.0">
+
+<androidx.constraintlayout.widget.ConstraintLayout
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#343634"
@@ -90,7 +100,6 @@
 
         android:ems="10"
         android:fontFamily="monospace"
-        android:gravity="center"
         android:inputType="textPersonName"
         android:text="20mm"
         android:textAlignment="viewStart"
@@ -160,7 +169,6 @@
 
         android:ems="10"
         android:fontFamily="monospace"
-        android:gravity="center"
         android:inputType="textPersonName"
         android:text="16mm"
         android:textAlignment="viewStart"
@@ -247,7 +255,6 @@
 
         android:ems="10"
         android:fontFamily="monospace"
-        android:gravity="center"
         android:inputType="textPersonName"
         android:text="12mm"
         android:textAlignment="viewStart"
@@ -317,7 +324,6 @@
 
         android:ems="10"
         android:fontFamily="monospace"
-        android:gravity="center"
         android:inputType="textPersonName"
         android:text="10mm"
         android:textAlignment="viewStart"
@@ -393,7 +399,6 @@
 
         android:ems="10"
         android:fontFamily="monospace"
-        android:gravity="center"
         android:inputType="textPersonName"
         android:text=" 8mm"
         android:textAlignment="viewStart"
@@ -478,9 +483,8 @@
         android:layout_marginTop="110dp"
         android:layout_marginEnd="5dp"
         android:fontFamily="monospace"
-        android:gravity="center"
         android:text=" Dia"
-        android:textAlignment="center"
+        android:textAlignment="viewStart"
         android:textColor="#FFFFFF"
         android:textSize="20sp"
         android:textStyle="bold"
@@ -521,7 +525,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/reset"
+        android:id="@+id/delete"
         android:layout_width="100dp"
         android:layout_height="50dp"
         android:layout_marginStart="120dp"
@@ -529,6 +533,7 @@
         android:layout_marginEnd="60dp"
         android:layout_marginBottom="70dp"
         android:text="RESET"
+        android:textSize="16sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/share"
@@ -543,9 +548,12 @@
         android:layout_marginBottom="70dp"
         android:onClick="export"
         android:text="SHARE"
+        android:textSize="16sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/t1" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>

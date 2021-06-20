@@ -8,6 +8,9 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.EditText;
@@ -30,7 +33,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
     String[] units = {"Bundles", "Kgs", "Rods"};
     String choice = "";
     Spinner spin;
-    Button reset;
+    Button reset,ConfigButton;
     int total[] = new int[3];
 
     TextView h[] = new TextView[' '];
@@ -38,6 +41,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
     TextView c[] = new TextView[' '];
     TextView d[] = new TextView[' '];
     EditText b[] = new EditText[' '];
+
 
     int[] hid = {R.id.h1, R.id.h2, R.id.h3};
     int[] tid = {R.id.t2, R.id.t3, R.id.t4};
@@ -48,6 +52,25 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
     dictionary obj = new dictionary();
     String keys[][] = obj.keys;
 
+
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.Configuration:
+                startActivity(new Intent(getApplicationContext(),Configuration.class));
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater mi = getMenuInflater();
+        mi.inflate(R.menu.menu,menu);
+        return super.onCreateOptionsMenu(menu);
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -69,9 +92,10 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
             d[j] = (TextView) findViewById(did[j]);
         }
 
-        reset = (Button) findViewById(R.id.reset);
+        reset = (Button) findViewById(R.id.delete);
 
         spin.setOnItemSelectedListener(this);
+
         //Creating the ArrayAdapter instance having the steel quantities
         ArrayAdapter aa = new ArrayAdapter(this, android.R.layout.simple_spinner_item, units);
         aa.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
