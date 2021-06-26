@@ -9,9 +9,16 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.SpinnerTrial">
-        <activity android:name=".Configuration"></activity>
-        <activity android:name=".MainActivity" android:screenOrientation="portrait"
-            android:configChanges="keyboardHidden|orientation|screenSize">
+
+        <activity
+            android:name=".Configuration"
+            android:screenOrientation="portrait"
+            android:configChanges="keyboardHidden|orientation|screenSize"></activity>
+
+        <activity android:name=".MainActivity"
+            android:screenOrientation="portrait"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:launchMode="singleInstance">
 
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

@@ -30,6 +30,10 @@ import Dictionary.dictionary;
 
 public class MainActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
 
+
+
+
+
     String[] units = {"Bundles", "Kgs", "Rods"};
     String choice = "";
     Spinner spin;
@@ -49,8 +53,11 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
     int[] cid = {R.id.c1, R.id.c2, R.id.c3, R.id.c4, R.id.c5};
     int[] did = {R.id.d1, R.id.d2, R.id.d3, R.id.d4, R.id.d5};
 
-    dictionary obj = new dictionary();
-    String keys[][] = obj.keys;
+
+
+    dictionary dict = new dictionary();
+    String keys[][] = dict.keys;
+    dataBase db = new dataBase(MainActivity.this);
 
 
 
@@ -77,7 +84,19 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+
         spin = (Spinner) findViewById(R.id.dropdown);
+
+
+
+        if(db.doesTableExist("defaultTable")<1)
+            db.Default();
+
+
+
+        dict = new dictionary(MainActivity.this);
+
+
 
         for(int j=0;j<5;j++)
         {
@@ -92,7 +111,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
             d[j] = (TextView) findViewById(did[j]);
         }
 
-        reset = (Button) findViewById(R.id.delete);
+        reset = (Button) findViewById(R.id.reset);
 
         spin.setOnItemSelectedListener(this);
 
@@ -239,11 +258,14 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
     void bundles() {
 
         int n[] = new int[2];
+        dictionary dict = new dictionary();
+
+        dict.calculate();
 
         for(int j=0;j<5;j++)
         {
             if (!b[j].getText().toString().equals("")) {
-                calc_interface[] x= (calc_interface[]) obj.function_values.get(keys[0][j]);
+                calc_interface[] x= (calc_interface[]) dict.function_values.get(keys[0][j]);
                 for(int k=0;k<2;k++) {
                     n[k] = x[k].calc(Double.parseDouble(b[j].getText().toString()));
                 }
@@ -261,10 +283,13 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
     void kgs() {
 
         int n[] = new int[2];
+        dictionary dict = new dictionary();
+
+        dict.calculate();
 
         for(int j=0;j<5;j++) {
             if (!b[j].getText().toString().equals("")) {
-                calc_interface[] x= (calc_interface[]) obj.function_values.get(keys[1][j]);
+                calc_interface[] x= (calc_interface[]) dict.function_values.get(keys[1][j]);
                 for(int k=0;k<2;k++) {
                     n[k] = x[k].calc(Double.parseDouble(b[j].getText().toString()));
                 }
@@ -282,10 +307,13 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
     void rods() {
 
         int n[] = new int[2];
+        dictionary dict = new dictionary();
+
+        dict.calculate();
 
         for(int j=0;j<5;j++) {
             if (!b[j].getText().toString().equals("")) {
-                calc_interface[] x= (calc_interface[]) obj.function_values.get(keys[2][j]);
+                calc_interface[] x= (calc_interface[]) dict.function_values.get(keys[2][j]);
                 for(int k=0;k<2;k++) {
                     n[k] = x[k].calc(Double.parseDouble(b[j].getText().toString()));
                 }
